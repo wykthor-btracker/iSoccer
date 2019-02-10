@@ -150,6 +150,19 @@ class Centro(Recurso):
         super().__init__(nome, disponivel)
         self.instance["dormitorios"] = dormitorios
 
+
+class Recursos():
+    def __init__(self,instances):
+        for instance in instances:
+            if(not isinstance(instance,Recurso)):
+                raise Exception("{} nao e um recurso".format(instance))
+        self.instances = instances
+
+    def __str__(self):
+        return pd.concat(self.instances).__str__()
+
+    def addOnibus(self,instance = None):
+
 # Classes
 
 # Functions
@@ -169,5 +182,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
