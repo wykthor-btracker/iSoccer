@@ -93,7 +93,6 @@ class Pessoa:
         for campo in range(len(campos)):
             Validation.validatethis(campos[campo], validar[campo])
         self.instance = pd.DataFrame([[nome, email, telefone]], columns=["Nome", "Email", "Telefone"], index=[cpf])
-        self.instance.index.names = ["CPF"]
 
     def __str__(self):
         return self.instance.__str__()
@@ -243,10 +242,6 @@ class Recursos:
 
 
 def main():
-    print(Pessoas([Funcionario("wykthor", "a@a.a", "9999-9999", "00000000000", "30", cargo="Médico", crm=24),
-                   Funcionario("wykthor", "a@a.a", "9999-9999", "00000000000", "30", cargo="Técnico")]).infoTime())
-    print(Recursos([Onibus("bus", True), Centro("centro rei pelé", True, 10),
-                    Estadio("Estádio rei pelé", True, 250, 10, 20)]).info())
     return None
 
 
