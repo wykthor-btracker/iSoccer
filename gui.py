@@ -134,8 +134,10 @@ class Application(tk.Frame):
         self.clean()
         buttTime = tk.Button(self.body, text="Informações do Time", command=lambda: self.textBox(self.humanWindow,
                                                                                                  self.dataframes[0]))
-        buttFunc = tk.Button(self.body, text="Informações dos funcionários")
-        buttSoci = tk.Button(self.body, text="Informações dos sócios")
+        buttFunc = tk.Button(self.body, text="Informações dos funcionários", command=lambda: self.textBox(self.humanWindow,
+                                                                                                 self.dataframes[0]))
+        buttSoci = tk.Button(self.body, text="Informações dos sócios", command=lambda: self.textBox(self.humanWindow,
+                                                                                                 self.dataframes[0]))
         buttTime.grid(row=0, sticky=E+W)
         buttFunc.grid(row=1, sticky=E+W)
         buttSoci.grid(row=2, sticky=E+W)
